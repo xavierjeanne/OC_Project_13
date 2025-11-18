@@ -1,3 +1,6 @@
 **/__pycache__
 *.pyc
 venv
+
+# Documentation non versionnée
+docs/
