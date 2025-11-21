@@ -1,0 +1,45 @@
+[run]
+source = .
+omit = 
+    */venv/*
+    */virtualenv/*
+    */env/*
+    */.venv/*
+    */migrations/*
+    */tests/*
+    */test_*
+    manage.py
+    */settings/*
+    */conftest.py
+    */setup.py
+    */wsgi.py
+    */asgi.py
+    */__pycache__/*
+    */node_modules/*
+    */static/*
+    */media/*
+    */htmlcov/*
+    */.pytest_cache/*
+
+[report]
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    def __str__
+    raise AssertionError
+    raise NotImplementedError
+    if __name__ == .__main__.:
+    class .*\bProtocol\):
+    @(abc\.)?abstractmethod
+
+show_missing = True
+skip_covered = False
+skip_empty = True
+precision = 2
+
+[html]
+directory = htmlcov
+title = OC Lettings Site Coverage Report
+
+[xml]
+output = coverage.xml
