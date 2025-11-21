@@ -5,8 +5,6 @@ This module contains unit tests for the Address and Letting models,
 using pytest.mark.django_db for database access.
 """
 import pytest
-from django.core.exceptions import ValidationError
-from django.db import IntegrityError
 
 from lettings.models import Address, Letting
 
@@ -25,7 +23,7 @@ class TestAddress:
             zip_code=12345,
             country_iso_code='TST'
         )
-        
+
         assert address.number == 123
         assert address.street == 'Test Street'
         assert address.city == 'Test City'
@@ -44,7 +42,7 @@ class TestAddress:
             zip_code=54321,
             country_iso_code='TST'
         )
-        
+
         assert str(address) == '456 Main Avenue'
 
     @pytest.mark.django_db
@@ -68,13 +66,13 @@ class TestLetting:
             zip_code=98765,
             country_iso_code='RST'
         )
-        
+
         # Create letting
         letting = Letting.objects.create(
             title='Beautiful Apartment',
             address=address
         )
-        
+
         assert letting.title == 'Beautiful Apartment'
         assert letting.address == address
 
@@ -89,12 +87,12 @@ class TestLetting:
             zip_code=10101,
             country_iso_code='TST'
         )
-        
+
         letting = Letting.objects.create(
             title='Cozy House',
             address=address
         )
-        
+
         assert str(letting) == 'Cozy House'
 
     @pytest.mark.django_db
@@ -108,12 +106,12 @@ class TestLetting:
             zip_code=20202,
             country_iso_code='TST'
         )
-        
+
         letting = Letting.objects.create(
             title='Unique Property',
             address=address
         )
-        
+
         # Test the relationship works both ways
         assert letting.address == address
         assert address.letting == letting
@@ -129,17 +127,17 @@ class TestLetting:
             zip_code=30303,
             country_iso_code='TST'
         )
-        
+
         letting = Letting.objects.create(
             title='Property to Delete',
             address=address
         )
-        
+
         letting_id = letting.id
-        
+
         # Delete the address
         address.delete()
-        
+
         # Verify the letting was also deleted
         assert not Letting.objects.filter(id=letting_id).exists()
 

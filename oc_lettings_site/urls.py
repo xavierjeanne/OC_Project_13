@@ -36,3 +36,4 @@ if settings.DEBUG:
 # Custom error handlers for production use
 handler404 = 'oc_lettings_site.views.custom_404'
 handler500 = 'oc_lettings_site.views.custom_500'
+handler403 = 'oc_lettings_site.views.custom_403'

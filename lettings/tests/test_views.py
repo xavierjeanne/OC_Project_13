@@ -18,7 +18,7 @@ class TestLettingsViews:
     def test_lettings_index_view(self):
         """Test the lettings index view displays all lettings."""
         client = Client()
-        
+
         # Create test data
         address1 = Address.objects.create(
             number=123,
@@ -28,7 +28,7 @@ class TestLettingsViews:
             zip_code=12345,
             country_iso_code='TST'
         )
-        
+
         address2 = Address.objects.create(
             number=456,
             street='Second Street',
@@ -37,21 +37,21 @@ class TestLettingsViews:
             zip_code=54321,
             country_iso_code='TST'
         )
-        
+
         letting1 = Letting.objects.create(
             title='First Property',
             address=address1
         )
-        
+
         letting2 = Letting.objects.create(
             title='Second Property',
             address=address2
         )
-        
+
         # Test the view
         url = reverse('lettings:index')
         response = client.get(url)
-        
+
         assert response.status_code == 200
         assert 'lettings_list' in response.context
         assert len(response.context['lettings_list']) == 2
@@ -72,16 +72,16 @@ class TestLettingsViews:
             zip_code=78901,
             country_iso_code='DST'
         )
-        
+
         letting = Letting.objects.create(
             title='Detailed Property',
             address=address
         )
-        
+
         # Test the view
         url = reverse('lettings:letting', kwargs={'letting_id': letting.id})
         response = client.get(url)
-        
+
         assert response.status_code == 200
         assert response.context['title'] == 'Detailed Property'
         assert response.context['address'] == address
@@ -93,7 +93,7 @@ class TestLettingsViews:
         """Test the letting detail view returns 404 for non-existent letting."""
         url = reverse('lettings:letting', kwargs={'letting_id': 999})
         response = client.get(url)
-        
+
         assert response.status_code == 404
 
     @pytest.mark.django_db
@@ -101,7 +101,7 @@ class TestLettingsViews:
         """Test the lettings index view when no lettings exist."""
         url = reverse('lettings:index')
         response = client.get(url)
-        
+
         assert response.status_code == 200
         assert 'lettings_list' in response.context
         assert len(response.context['lettings_list']) == 0

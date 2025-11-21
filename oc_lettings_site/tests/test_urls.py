@@ -18,7 +18,7 @@ class TestOcLettingsSiteUrls:
         """Test that the index URL resolves correctly."""
         url = reverse('index')
         assert url == '/'
-        
+
         resolver = resolve('/')
         assert resolver.func == index
         assert resolver.url_name == 'index'
@@ -27,7 +27,7 @@ class TestOcLettingsSiteUrls:
         """Test that lettings app URLs are properly included."""
         url = reverse('lettings:index')
         assert url == '/lettings/'
-        
+
         resolver = resolve('/lettings/')
         assert resolver.namespace == 'lettings'
 
@@ -35,7 +35,7 @@ class TestOcLettingsSiteUrls:
         """Test that profiles app URLs are properly included."""
         url = reverse('profiles:index')
         assert url == '/profiles/'
-        
+
         resolver = resolve('/profiles/')
         assert resolver.namespace == 'profiles'
 
@@ -54,7 +54,7 @@ class TestOcLettingsSiteUrls:
         """Test that the index view is accessible."""
         client = Client()
         response = client.get('/')
-        
+
         assert response.status_code == 200
 
     def test_url_namespaces(self):
@@ -63,7 +63,7 @@ class TestOcLettingsSiteUrls:
         lettings_url = reverse('lettings:index')
         lettings_resolver = resolve(lettings_url)
         assert lettings_resolver.namespace == 'lettings'
-        
+
         # Test profiles namespace
         profiles_url = reverse('profiles:index')
         profiles_resolver = resolve(profiles_url)
@@ -72,16 +72,16 @@ class TestOcLettingsSiteUrls:
     def test_main_url_patterns_structure(self):
         """Test the main URL patterns structure."""
         from oc_lettings_site.urls import urlpatterns
-        
+
         # Should have at least: index, lettings include, profiles include, admin
         assert len(urlpatterns) >= 4
-        
+
         # Check that we have the main patterns
         pattern_paths = []
         for pattern in urlpatterns:
             if hasattr(pattern, 'pattern'):
                 pattern_paths.append(str(pattern.pattern))
-        
+
         # Should include root path and app includes
         assert any('$' in path or '/' in path for path in pattern_paths)
 
@@ -91,15 +91,14 @@ class TestOcLettingsSiteUrls:
         """Test that 404 handler is configured."""
         client = Client()
         response = client.get('/nonexistent-page/')
-        
+
         assert response.status_code == 404
 
-    @pytest.mark.django_db  
+    @pytest.mark.django_db
     def test_static_files_served_in_debug(self):
         """Test that static files configuration is present."""
         from django.conf import settings
-        from oc_lettings_site.urls import urlpatterns
-        
+
         if settings.DEBUG:
             # In debug mode, static files should be configured
             # This is handled by Django automatically
@@ -108,11 +107,11 @@ class TestOcLettingsSiteUrls:
     def test_error_handlers_configured(self):
         """Test that error handlers are properly configured."""
         from oc_lettings_site import urls
-        
+
         # Check if error handlers are defined
         assert hasattr(urls, 'handler404')
-        assert hasattr(urls, 'handler500') 
-        
+        assert hasattr(urls, 'handler500')
+
         # Check handler functions
         assert urls.handler404 == 'oc_lettings_site.views.custom_404'
         assert urls.handler500 == 'oc_lettings_site.views.custom_500'
@@ -122,11 +121,11 @@ class TestOcLettingsSiteUrls:
         # Test main index
         index_url = reverse('index')
         assert index_url == '/'
-        
+
         # Test app URLs
         lettings_index = reverse('lettings:index')
         assert lettings_index == '/lettings/'
-        
+
         profiles_index = reverse('profiles:index')
         assert profiles_index == '/profiles/'
 
@@ -136,7 +135,7 @@ class TestOcLettingsSiteUrls:
         original_url = '/'
         resolver = resolve(original_url)
         reversed_url = reverse(resolver.url_name)
-        
+
         assert original_url == reversed_url
 
     def test_app_url_isolation(self):
@@ -145,7 +144,7 @@ class TestOcLettingsSiteUrls:
         lettings_index = reverse('lettings:index')
         profiles_index = reverse('profiles:index')
         main_index = reverse('index')
-        
+
         # All should be different URLs
         urls = [lettings_index, profiles_index, main_index]
         assert len(set(urls)) == len(urls)  # All unique

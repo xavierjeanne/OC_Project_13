@@ -9,8 +9,13 @@ Functions:
     index: Display a list of all user profiles
     profile: Display detailed information for a specific user profile
 """
+import logging
 from django.shortcuts import render, get_object_or_404
+from django.http import Http404
 from .models import Profile
+
+# Configure logger for this module
+logger = logging.getLogger(__name__)
 
 
 def index(request):
@@ -30,9 +35,28 @@ def index(request):
                      Profile objects ordered by default model ordering.
                      Status code 200 (OK) on success.
     """
-    profiles_list = Profile.objects.all()
-    context = {'profiles_list': profiles_list}
-    return render(request, 'profiles/index.html', context)
+    try:
+        # Log the access to profiles index page
+        client_ip = request.META.get('REMOTE_ADDR', 'unknown')
+        user_agent = request.META.get('HTTP_USER_AGENT', 'unknown')
+        logger.info(f"Profiles index accessed from IP: {client_ip}, User-Agent: {user_agent}")
+
+        profiles_list = Profile.objects.all()
+        profiles_count = profiles_list.count()
+
+        # Log the number of profiles returned
+        logger.debug(f"Retrieved {profiles_count} profiles for index page")
+
+        context = {'profiles_list': profiles_list}
+
+        # Log successful response
+        logger.info(f"Profiles index page rendered successfully with {profiles_count} profiles")
+        return render(request, 'profiles/index.html', context)
+
+    except Exception as e:
+        # Log any unexpected errors
+        logger.error(f"Unexpected error in profiles index view: {str(e)}", exc_info=True)
+        raise
 
 
 def profile(request, username):
@@ -58,6 +82,32 @@ def profile(request, username):
     Raises:
         Http404: If no Profile object exists for a User with the specified username.
     """
-    profile = get_object_or_404(Profile, user__username=username)
-    context = {'profile': profile}
-    return render(request, 'profiles/profile.html', context)
+    try:
+        # Log the access attempt with critical parameters
+        client_ip = request.META.get('REMOTE_ADDR', 'unknown')
+        logger.info(f"Profile detail accessed: username='{username}', IP={client_ip}")
+
+        # Attempt to get the profile - this may raise Http404
+        profile = get_object_or_404(Profile, user__username=username)
+
+        # Log successful retrieval with profile details
+        logger.info(f"Profile found: username='{username}', "
+                    f"User ID={profile.user.id}, "
+                    f"Favorite city='{profile.favorite_city}'")
+
+        context = {'profile': profile}
+
+        # Log successful rendering
+        logger.debug(f"Profile detail page rendered successfully for username='{username}'")
+        return render(request, 'profiles/profile.html', context)
+
+    except Http404:
+        # Log 404 errors with relevant information
+        logger.warning(f"Profile not found: username='{username}', IP={client_ip}")
+        raise
+
+    except Exception as e:
+        # Log any unexpected errors with full context
+        logger.error(f"Unexpected error in profile detail view: username='{username}', "
+                     f"Error={str(e)}", exc_info=True)
+        raise

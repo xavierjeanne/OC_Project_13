@@ -9,8 +9,13 @@ Functions:
     index: Display a list of all available lettings
     letting: Display detailed information for a specific letting
 """
+import logging
 from django.shortcuts import render, get_object_or_404
+from django.http import Http404
 from .models import Letting
+
+# Configure logger for this module
+logger = logging.getLogger(__name__)
 
 
 def index(request):
@@ -31,9 +36,28 @@ def index(request):
                      Letting objects ordered by default model ordering.
                      Status code 200 (OK) on success.
     """
-    lettings_list = Letting.objects.all()
-    context = {'lettings_list': lettings_list}
-    return render(request, 'lettings/index.html', context)
+    try:
+        # Log the access to lettings index page
+        client_ip = request.META.get('REMOTE_ADDR', 'unknown')
+        user_agent = request.META.get('HTTP_USER_AGENT', 'unknown')
+        logger.info(f"Lettings index accessed from IP: {client_ip}, User-Agent: {user_agent}")
+
+        lettings_list = Letting.objects.all()
+        lettings_count = lettings_list.count()
+
+        # Log the number of lettings returned
+        logger.debug(f"Retrieved {lettings_count} lettings for index page")
+
+        context = {'lettings_list': lettings_list}
+
+        # Log successful response
+        logger.info(f"Lettings index page rendered successfully with {lettings_count} lettings")
+        return render(request, 'lettings/index.html', context)
+
+    except Exception as e:
+        # Log any unexpected errors
+        logger.error(f"Unexpected error in lettings index view: {str(e)}", exc_info=True)
+        raise
 
 
 def letting(request, letting_id):
@@ -58,9 +82,34 @@ def letting(request, letting_id):
     Raises:
         Http404: If no Letting object with the specified ID exists.
     """
-    letting = get_object_or_404(Letting, id=letting_id)
-    context = {
-        'title': letting.title,
-        'address': letting.address,
-    }
-    return render(request, 'lettings/letting.html', context)
+    try:
+        # Log the access attempt with critical parameters
+        client_ip = request.META.get('REMOTE_ADDR', 'unknown')
+        logger.info(f"Letting detail accessed: ID={letting_id}, IP={client_ip}")
+
+        # Attempt to get the letting - this may raise Http404
+        letting = get_object_or_404(Letting, id=letting_id)
+
+        # Log successful retrieval with letting details
+        logger.info(f"Letting found: ID={letting_id}, Title='{letting.title}', "
+                    f"Address='{letting.address}'")
+
+        context = {
+            'title': letting.title,
+            'address': letting.address,
+        }
+
+        # Log successful rendering
+        logger.debug(f"Letting detail page rendered successfully for ID={letting_id}")
+        return render(request, 'lettings/letting.html', context)
+
+    except Http404:
+        # Log 404 errors with relevant information
+        logger.warning(f"Letting not found: ID={letting_id}, IP={client_ip}")
+        raise
+
+    except Exception as e:
+        # Log any unexpected errors with full context
+        logger.error(f"Unexpected error in letting detail view: ID={letting_id}, "
+                     f"Error={str(e)}", exc_info=True)
+        raise
