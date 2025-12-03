@@ -1,0 +1,36 @@
+# Git attributes for proper line ending handling
+
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Explicitly declare shell scripts to use LF
+*.sh text eol=lf
+
+# Python files
+*.py text eol=lf
+
+# Docker files
+Dockerfile text eol=lf
+docker-compose.yml text eol=lf
+
+# Markdown and documentation
+*.md text eol=lf
+*.txt text eol=lf
+
+# YAML files
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.otf binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
+*.eot binary
+*.db binary
+*.sqlite3 binary

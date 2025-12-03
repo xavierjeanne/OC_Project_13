@@ -24,7 +24,9 @@ COPY . .
 
 # Copy and set executable permissions for entrypoint
 COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+# Convert line endings and make executable
+RUN sed -i 's/\r$//' /entrypoint.sh && \
+    chmod +x /entrypoint.sh
 
 # Create necessary directories and set permissions
 RUN mkdir -p staticfiles && \
