@@ -30,6 +30,8 @@ RUN echo '#!/bin/sh' > /entrypoint.sh && \
     echo '  echo "WARNING: SECRET_KEY not set, using default"' >> /entrypoint.sh && \
     echo '  export SECRET_KEY="temp-secret-key-for-docker-build-only"' >> /entrypoint.sh && \
     echo 'fi' >> /entrypoint.sh && \
+    echo 'echo "Running database migrations..."' >> /entrypoint.sh && \
+    echo 'python manage.py migrate --noinput' >> /entrypoint.sh && \
     echo 'echo "Collecting static files..."' >> /entrypoint.sh && \
     echo 'python manage.py collectstatic --noinput --clear' >> /entrypoint.sh && \
     echo 'echo "Setup complete. Starting server..."' >> /entrypoint.sh && \

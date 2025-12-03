@@ -8,6 +8,9 @@ if [ -z "$SECRET_KEY" ]; then
     export SECRET_KEY="temp-secret-key-for-docker-build-only"
 fi
 
+echo "Running database migrations..."
+python manage.py migrate --noinput
+
 echo "Collecting static files..."
 python manage.py collectstatic --noinput --clear
 
