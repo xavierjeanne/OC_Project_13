@@ -7,11 +7,13 @@ import os
 import sys
 import django
 from pathlib import Path
-from django.core.management import call_command
-from django.contrib.auth.models import User
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'oc_lettings_site.settings')
 django.setup()
+
+# Import Django modules AFTER django.setup()
+from django.core.management import call_command  # noqa: E402
+from django.contrib.auth.models import User  # noqa: E402
 
 
 def load_fixtures():
