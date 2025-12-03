@@ -22,10 +22,18 @@ RUN pip install --no-cache-dir --upgrade pip && \
 # Copy project files
 COPY . .
 
-# Copy and set executable permissions for entrypoint
-COPY entrypoint.sh /entrypoint.sh
-# Convert line endings and make executable
-RUN sed -i 's/\r$//' /entrypoint.sh && \
+# Create entrypoint script directly in Dockerfile to avoid line ending issues
+RUN echo '#!/bin/sh' > /entrypoint.sh && \
+    echo 'set -e' >> /entrypoint.sh && \
+    echo 'echo "Starting OC Lettings application..."' >> /entrypoint.sh && \
+    echo 'if [ -z "$SECRET_KEY" ]; then' >> /entrypoint.sh && \
+    echo '  echo "WARNING: SECRET_KEY not set, using default"' >> /entrypoint.sh && \
+    echo '  export SECRET_KEY="temp-secret-key-for-docker-build-only"' >> /entrypoint.sh && \
+    echo 'fi' >> /entrypoint.sh && \
+    echo 'echo "Collecting static files..."' >> /entrypoint.sh && \
+    echo 'python manage.py collectstatic --noinput --clear' >> /entrypoint.sh && \
+    echo 'echo "Setup complete. Starting server..."' >> /entrypoint.sh && \
+    echo 'exec "$@"' >> /entrypoint.sh && \
     chmod +x /entrypoint.sh
 
 # Create necessary directories and set permissions
