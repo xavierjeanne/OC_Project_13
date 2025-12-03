@@ -93,3 +93,224 @@ WARNING 2025-12-03 13:29:44,759 views 34492 7880 Profile not found: username='za
 WARNING 2025-12-03 13:29:44,761 views 34492 7880 404 Error: URL='/profiles/zaz/', IP=127.0.0.1, Referer='unknown', Exception='No Profile matches the given query.'
 WARNING 2025-12-03 13:29:44,766 log 34492 7880 Not Found: /profiles/zaz/
 WARNING 2025-12-03 13:29:44,767 basehttp 34492 7880 "GET /profiles/zaz/ HTTP/1.1" 404 4056
+INFO 2025-12-03 15:17:10,589 views 33940 13728 Lettings index accessed from IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+INFO 2025-12-03 15:17:10,604 views 33940 13728 Lettings index page rendered successfully with 6 lettings
+INFO 2025-12-03 15:17:12,589 views 33940 35624 Letting detail accessed: ID=4, IP=127.0.0.1
+INFO 2025-12-03 15:17:12,596 views 33940 35624 Letting found: ID=4, Title='Pirates of the Caribbean Getaway', Address='9230 E. Joy Ridge Street'
+INFO 2025-12-03 15:17:13,998 views 33940 35624 Profiles index accessed from IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+INFO 2025-12-03 15:17:14,001 views 33940 35624 Profiles index page rendered successfully with 4 profiles
+INFO 2025-12-03 15:17:15,134 views 33940 35624 Profile detail accessed: username='HeadlinesGazer', IP=127.0.0.1
+INFO 2025-12-03 15:17:15,138 views 33940 35624 Profile found: username='HeadlinesGazer', User ID=5, Favorite city='Buenos Aires'
+INFO 2025-12-03 15:17:16,071 views 33940 35624 Profiles index accessed from IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+INFO 2025-12-03 15:17:16,074 views 33940 35624 Profiles index page rendered successfully with 4 profiles
+INFO 2025-12-03 15:17:16,827 views 33940 35624 Lettings index accessed from IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+INFO 2025-12-03 15:17:16,831 views 33940 35624 Lettings index page rendered successfully with 6 lettings
+INFO 2025-12-03 15:17:18,531 views 33940 35624 Homepage accessed: IP=127.0.0.1, Referer=http://127.0.0.1:8000/lettings/
+INFO 2025-12-03 15:17:18,532 views 33940 35624 Homepage rendered successfully
+INFO 2025-12-03 16:16:29,980 views 34572 39232 Lettings index accessed from IP: 127.0.0.1, User-Agent: unknown
+INFO 2025-12-03 16:16:29,989 views 34572 39232 Lettings index page rendered successfully with 2 lettings
+INFO 2025-12-03 16:16:30,082 views 34572 39232 Letting detail accessed: ID=1, IP=127.0.0.1
+INFO 2025-12-03 16:16:30,084 views 34572 39232 Letting found: ID=1, Title='Detailed Property', Address='789 Detail Street'
+INFO 2025-12-03 16:16:30,130 views 34572 39232 Letting detail accessed: ID=999, IP=127.0.0.1
+WARNING 2025-12-03 16:16:30,132 views 34572 39232 Letting not found: ID=999, IP=127.0.0.1
+WARNING 2025-12-03 16:16:30,232 views 34572 39232 404 Error: URL='/lettings/999/', IP=127.0.0.1, Referer='unknown', Exception='No Letting matches the given query.'
+WARNING 2025-12-03 16:16:30,249 log 34572 39232 Not Found: /lettings/999/
+INFO 2025-12-03 16:16:30,296 views 34572 39232 Lettings index accessed from IP: 127.0.0.1, User-Agent: unknown
+INFO 2025-12-03 16:16:30,297 views 34572 39232 Lettings index page rendered successfully with 0 lettings
+INFO 2025-12-03 16:16:30,730 views 34572 39232 Profiles index accessed from IP: 127.0.0.1, User-Agent: unknown
+INFO 2025-12-03 16:16:30,732 views 34572 39232 Profiles index page rendered successfully with 2 profiles
+INFO 2025-12-03 16:16:30,774 views 34572 39232 Profile detail accessed: username='detailuser', IP=127.0.0.1
+INFO 2025-12-03 16:16:30,777 views 34572 39232 Profile found: username='detailuser', User ID=1, Favorite city='Tokyo'
+INFO 2025-12-03 16:16:30,815 views 34572 39232 Profile detail accessed: username='nonexistent', IP=127.0.0.1
+WARNING 2025-12-03 16:16:30,818 views 34572 39232 Profile not found: username='nonexistent', IP=127.0.0.1
+WARNING 2025-12-03 16:16:30,828 views 34572 39232 404 Error: URL='/profiles/nonexistent/', IP=127.0.0.1, Referer='unknown', Exception='No Profile matches the given query.'
+WARNING 2025-12-03 16:16:30,839 log 34572 39232 Not Found: /profiles/nonexistent/
+INFO 2025-12-03 16:16:30,889 views 34572 39232 Profiles index accessed from IP: 127.0.0.1, User-Agent: unknown
+INFO 2025-12-03 16:16:30,891 views 34572 39232 Profiles index page rendered successfully with 0 profiles
+INFO 2025-12-03 16:16:30,943 views 34572 39232 Profile detail accessed: username='noprofileuser', IP=127.0.0.1
+WARNING 2025-12-03 16:16:30,944 views 34572 39232 Profile not found: username='noprofileuser', IP=127.0.0.1
+WARNING 2025-12-03 16:16:30,953 views 34572 39232 404 Error: URL='/profiles/noprofileuser/', IP=127.0.0.1, Referer='unknown', Exception='No Profile matches the given query.'
+WARNING 2025-12-03 16:16:30,967 log 34572 39232 Not Found: /profiles/noprofileuser/
+INFO 2025-12-03 16:16:31,002 views 34572 39232 Profiles index accessed from IP: 127.0.0.1, User-Agent: unknown
+INFO 2025-12-03 16:16:31,004 views 34572 39232 Profiles index page rendered successfully with 0 profiles
+INFO 2025-12-03 16:16:31,048 views 34572 39232 Profile detail accessed: username='templateuser', IP=127.0.0.1
+INFO 2025-12-03 16:16:31,050 views 34572 39232 Profile found: username='templateuser', User ID=1, Favorite city='Madrid'
+INFO 2025-12-03 16:16:31,109 views 34572 39232 Profile detail accessed: username='emptycityuser', IP=127.0.0.1
+INFO 2025-12-03 16:16:31,112 views 34572 39232 Profile found: username='emptycityuser', User ID=1, Favorite city=''
+WARNING 2025-12-03 16:16:31,126 views 34572 39232 403 Forbidden: URL='<Mock name='mock.get_full_path()' id='1414746171984'>', IP=127.0.0.1, Exception='Forbidden'
+WARNING 2025-12-03 16:16:31,194 views 34572 39232 404 Error: URL='/nonexistent-url/', IP=127.0.0.1, Referer='unknown', Exception='{'tried': [[<URLPattern '' [name='index']>], [<URLResolver <module 'lettings.urls' from 'C:\\Users\\xavie\\Documents\\document privée\\OC_Project_13\\lettings\\urls.py'> (lettings:lettings) 'lettings/'>], [<URLResolver <module 'profiles.urls' from 'C:\\Users\\xavie\\Documents\\document privée\\OC_Project_13\\profiles\\urls.py'> (profiles:profiles) 'profiles/'>], [<URLResolver <URLPattern list> (admin:admin) 'admin/'>]], 'path': 'nonexistent-url/'}'
+WARNING 2025-12-03 16:16:31,215 log 34572 39232 Not Found: /nonexistent-url/
+WARNING 2025-12-03 16:16:31,267 log 34572 39232 Not Found: /nonexistent-url/
+ERROR 2025-12-03 16:16:31,275 views 34572 39232 500 Internal Server Error: URL='<Mock name='mock.get_full_path()' id='1414742264864'>', IP=127.0.0.1
+INFO 2025-12-03 16:16:31,337 views 34572 39232 Letting detail accessed: ID=999, IP=127.0.0.1
+WARNING 2025-12-03 16:16:31,338 views 34572 39232 Letting not found: ID=999, IP=127.0.0.1
+WARNING 2025-12-03 16:16:31,349 views 34572 39232 404 Error: URL='/lettings/999/', IP=127.0.0.1, Referer='unknown', Exception='No Letting matches the given query.'
+WARNING 2025-12-03 16:16:31,366 log 34572 39232 Not Found: /lettings/999/
+INFO 2025-12-03 16:16:31,457 views 34572 39232 Profile detail accessed: username='nonexistent', IP=127.0.0.1
+WARNING 2025-12-03 16:16:31,460 views 34572 39232 Profile not found: username='nonexistent', IP=127.0.0.1
+WARNING 2025-12-03 16:16:31,470 views 34572 39232 404 Error: URL='/profiles/nonexistent/', IP=127.0.0.1, Referer='unknown', Exception='No Profile matches the given query.'
+WARNING 2025-12-03 16:16:31,480 log 34572 39232 Not Found: /profiles/nonexistent/
+INFO 2025-12-03 16:16:31,523 views 34572 39232 Letting detail accessed: ID=1, IP=127.0.0.1
+ERROR 2025-12-03 16:16:31,525 views 34572 39232 Unexpected error in letting detail view: ID=1, Error=Database error
+Traceback (most recent call last):
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\lettings\views.py", line 91, in letting
+    letting = get_object_or_404(Letting, id=letting_id)
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1167, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1171, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1226, in _execute_mock_call
+    raise effect
+Exception: Database error
+ERROR 2025-12-03 16:16:31,554 views 34572 39232 500 Internal Server Error: URL='/lettings/1/', IP=127.0.0.1
+ERROR 2025-12-03 16:16:31,584 log 34572 39232 Internal Server Error: /lettings/1/
+Traceback (most recent call last):
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\lettings\views.py", line 91, in letting
+    letting = get_object_or_404(Letting, id=letting_id)
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1167, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1171, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1226, in _execute_mock_call
+    raise effect
+Exception: Database error
+INFO 2025-12-03 16:16:31,626 views 34572 39232 Lettings index accessed from IP: 127.0.0.1, User-Agent: unknown
+ERROR 2025-12-03 16:16:31,628 views 34572 39232 Unexpected error in lettings index view: Database error
+Traceback (most recent call last):
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\lettings\views.py", line 45, in index
+    lettings_list = Letting.objects.all()
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1167, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1171, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1226, in _execute_mock_call
+    raise effect
+Exception: Database error
+ERROR 2025-12-03 16:16:31,651 views 34572 39232 500 Internal Server Error: URL='/lettings/', IP=127.0.0.1
+ERROR 2025-12-03 16:16:31,680 log 34572 39232 Internal Server Error: /lettings/
+Traceback (most recent call last):
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\lettings\views.py", line 45, in index
+    lettings_list = Letting.objects.all()
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1167, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1171, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1226, in _execute_mock_call
+    raise effect
+Exception: Database error
+INFO 2025-12-03 16:16:31,776 views 34572 39232 Homepage accessed: IP=127.0.0.1, Referer=direct
+INFO 2025-12-03 16:16:31,778 views 34572 39232 Homepage rendered successfully
+ERROR 2025-12-03 16:16:31,778 views 34572 39232 Unexpected error in homepage view: Template error
+Traceback (most recent call last):
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\oc_lettings_site\views.py", line 45, in index
+    return render(request, 'index.html')
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1167, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1171, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1226, in _execute_mock_call
+    raise effect
+Exception: Template error
+ERROR 2025-12-03 16:16:31,801 views 34572 39232 500 Internal Server Error: URL='/', IP=127.0.0.1
+ERROR 2025-12-03 16:16:31,845 views 34572 39232 500 Internal Server Error: URL='/', IP=127.0.0.1
+ERROR 2025-12-03 16:16:31,889 views 34572 39232 500 Internal Server Error: URL='/', IP=127.0.0.1
+ERROR 2025-12-03 16:16:31,936 views 34572 39232 500 Internal Server Error: URL='/', IP=127.0.0.1
+ERROR 2025-12-03 16:16:31,979 views 34572 39232 500 Internal Server Error: URL='/', IP=127.0.0.1
+ERROR 2025-12-03 16:16:32,032 views 34572 39232 500 Internal Server Error: URL='/', IP=127.0.0.1
+ERROR 2025-12-03 16:16:32,098 views 34572 39232 500 Internal Server Error: URL='/', IP=127.0.0.1
+ERROR 2025-12-03 16:16:32,201 views 34572 39232 500 Internal Server Error: URL='/', IP=127.0.0.1
+ERROR 2025-12-03 16:16:32,258 views 34572 39232 500 Internal Server Error: URL='/', IP=127.0.0.1
+INFO 2025-12-03 16:16:32,312 views 34572 39232 Profile detail accessed: username='testuser', IP=127.0.0.1
+ERROR 2025-12-03 16:16:32,312 views 34572 39232 Unexpected error in profile detail view: username='testuser', Error=Database error
+Traceback (most recent call last):
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\profiles\views.py", line 91, in profile
+    profile = get_object_or_404(Profile, user__username=username)
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1167, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1171, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1226, in _execute_mock_call
+    raise effect
+Exception: Database error
+ERROR 2025-12-03 16:16:32,336 views 34572 39232 500 Internal Server Error: URL='/profiles/testuser/', IP=127.0.0.1
+ERROR 2025-12-03 16:16:32,369 log 34572 39232 Internal Server Error: /profiles/testuser/
+Traceback (most recent call last):
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\profiles\views.py", line 91, in profile
+    profile = get_object_or_404(Profile, user__username=username)
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1167, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1171, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1226, in _execute_mock_call
+    raise effect
+Exception: Database error
+INFO 2025-12-03 16:16:32,406 views 34572 39232 Profiles index accessed from IP: 127.0.0.1, User-Agent: unknown
+ERROR 2025-12-03 16:16:32,406 views 34572 39232 Unexpected error in profiles index view: Database error
+Traceback (most recent call last):
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\profiles\views.py", line 44, in index
+    profiles_list = Profile.objects.all()
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1167, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1171, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1226, in _execute_mock_call
+    raise effect
+Exception: Database error
+ERROR 2025-12-03 16:16:32,430 views 34572 39232 500 Internal Server Error: URL='/profiles/', IP=127.0.0.1
+ERROR 2025-12-03 16:16:32,460 log 34572 39232 Internal Server Error: /profiles/
+Traceback (most recent call last):
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\profiles\views.py", line 44, in index
+    profiles_list = Profile.objects.all()
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1167, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1171, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\xavie\AppData\Local\Programs\Python\Python313\Lib\unittest\mock.py", line 1226, in _execute_mock_call
+    raise effect
+Exception: Database error
+INFO 2025-12-03 16:16:32,499 views 34572 39232 Homepage accessed: IP=127.0.0.1, Referer=direct
+INFO 2025-12-03 16:16:32,500 views 34572 39232 Homepage rendered successfully
+WARNING 2025-12-03 16:16:32,537 views 34572 39232 404 Error: URL='/nonexistent-page/', IP=127.0.0.1, Referer='unknown', Exception='{'tried': [[<URLPattern '' [name='index']>], [<URLResolver <module 'lettings.urls' from 'C:\\Users\\xavie\\Documents\\document privée\\OC_Project_13\\lettings\\urls.py'> (lettings:lettings) 'lettings/'>], [<URLResolver <module 'profiles.urls' from 'C:\\Users\\xavie\\Documents\\document privée\\OC_Project_13\\profiles\\urls.py'> (profiles:profiles) 'profiles/'>], [<URLResolver <URLPattern list> (admin:admin) 'admin/'>]], 'path': 'nonexistent-page/'}'
+WARNING 2025-12-03 16:16:32,556 log 34572 39232 Not Found: /nonexistent-page/

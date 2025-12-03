@@ -32,6 +32,8 @@ RUN echo '#!/bin/sh' > /entrypoint.sh && \
     echo 'fi' >> /entrypoint.sh && \
     echo 'echo "Running database migrations..."' >> /entrypoint.sh && \
     echo 'python manage.py migrate --noinput' >> /entrypoint.sh && \
+    echo 'echo "Loading production data..."' >> /entrypoint.sh && \
+    echo 'python load_fixtures.py' >> /entrypoint.sh && \
     echo 'echo "Collecting static files..."' >> /entrypoint.sh && \
     echo 'python manage.py collectstatic --noinput --clear' >> /entrypoint.sh && \
     echo 'echo "Setup complete. Starting server..."' >> /entrypoint.sh && \

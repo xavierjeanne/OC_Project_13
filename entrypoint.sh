@@ -11,6 +11,9 @@ fi
 echo "Running database migrations..."
 python manage.py migrate --noinput
 
+echo "Loading production data..."
+python load_fixtures.py
+
 echo "Collecting static files..."
 python manage.py collectstatic --noinput --clear
 
