@@ -1,0 +1,95 @@
+INFO 2025-12-03 13:27:40,954 views 35696 37556 Homepage accessed: IP=127.0.0.1, Referer=direct
+INFO 2025-12-03 13:27:40,956 views 35696 37556 Homepage rendered successfully
+ERROR 2025-12-03 13:27:41,003 views 35696 37556 Unexpected error in homepage view: Missing staticfiles manifest entry for 'css/styles.css'
+Traceback (most recent call last):
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\oc_lettings_site\views.py", line 45, in index
+    return render(request, 'index.html')
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\sentry_sdk\utils.py", line 1864, in runner
+    return sentry_patched_function(*args, **kwargs)
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\sentry_sdk\integrations\django\templates.py", line 105, in render
+    return real_render(request, template_name, context, *args, **kwargs)
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\templatetags\static.py", line 116, in render
+    url = self.url(context)
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\templatetags\static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\templatetags\static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\contrib\staticfiles\storage.py", line 203, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\contrib\staticfiles\storage.py", line 182, in _url
+    hashed_name = hashed_name_func(*args)
+  File "C:\Users\xavie\Documents\document privée\OC_Project_13\venv\Lib\site-packages\django\contrib\staticfiles\storage.py", line 513, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'css/styles.css'
+ERROR 2025-12-03 13:27:41,159 views 35696 37556 500 Internal Server Error: URL='/', IP=127.0.0.1
+ERROR 2025-12-03 13:27:41,203 views 35696 37556 500 Internal Server Error: URL='/', IP=127.0.0.1
+ERROR 2025-12-03 13:27:41,269 views 35696 37556 500 Internal Server Error: URL='/', IP=127.0.0.1
+ERROR 2025-12-03 13:27:41,339 views 35696 37556 500 Internal Server Error: URL='/', IP=127.0.0.1
+ERROR 2025-12-03 13:27:41,422 views 35696 37556 500 Internal Server Error: URL='/', IP=127.0.0.1
+ERROR 2025-12-03 13:27:41,523 views 35696 37556 500 Internal Server Error: URL='/', IP=127.0.0.1
+ERROR 2025-12-03 13:27:41,645 views 35696 37556 500 Internal Server Error: URL='/', IP=127.0.0.1
+ERROR 2025-12-03 13:27:41,792 views 35696 37556 500 Internal Server Error: URL='/', IP=127.0.0.1
+ERROR 2025-12-03 13:27:41,967 views 35696 37556 500 Internal Server Error: URL='/', IP=127.0.0.1
+ERROR 2025-12-03 13:27:42,235 basehttp 35696 37556 "GET / HTTP/1.1" 500 59
+WARNING 2025-12-03 13:27:42,458 views 35696 37556 404 Error: URL='/favicon.ico', IP=127.0.0.1, Referer='http://127.0.0.1:8000/', Exception='{'tried': [[<URLPattern '' [name='index']>], [<URLResolver <module 'lettings.urls' from 'C:\\Users\\xavie\\Documents\\document privée\\OC_Project_13\\lettings\\urls.py'> (lettings:lettings) 'lettings/'>], [<URLResolver <module 'profiles.urls' from 'C:\\Users\\xavie\\Documents\\document privée\\OC_Project_13\\profiles\\urls.py'> (profiles:profiles) 'profiles/'>], [<URLResolver <URLPattern list> (admin:admin) 'admin/'>]], 'path': 'favicon.ico'}'
+ERROR 2025-12-03 13:27:42,481 views 35696 37556 500 Internal Server Error: URL='/favicon.ico', IP=127.0.0.1
+ERROR 2025-12-03 13:27:42,523 views 35696 37556 500 Internal Server Error: URL='/favicon.ico', IP=127.0.0.1
+ERROR 2025-12-03 13:27:42,586 views 35696 37556 500 Internal Server Error: URL='/favicon.ico', IP=127.0.0.1
+ERROR 2025-12-03 13:27:42,657 views 35696 37556 500 Internal Server Error: URL='/favicon.ico', IP=127.0.0.1
+ERROR 2025-12-03 13:27:42,748 views 35696 37556 500 Internal Server Error: URL='/favicon.ico', IP=127.0.0.1
+ERROR 2025-12-03 13:27:42,851 views 35696 37556 500 Internal Server Error: URL='/favicon.ico', IP=127.0.0.1
+ERROR 2025-12-03 13:27:42,972 views 35696 37556 500 Internal Server Error: URL='/favicon.ico', IP=127.0.0.1
+ERROR 2025-12-03 13:27:43,109 views 35696 37556 500 Internal Server Error: URL='/favicon.ico', IP=127.0.0.1
+ERROR 2025-12-03 13:27:43,257 views 35696 37556 500 Internal Server Error: URL='/favicon.ico', IP=127.0.0.1
+ERROR 2025-12-03 13:27:43,561 basehttp 35696 37556 "GET /favicon.ico HTTP/1.1" 500 59
+INFO 2025-12-03 13:29:36,793 views 34492 7880 Homepage accessed: IP=127.0.0.1, Referer=direct
+INFO 2025-12-03 13:29:36,794 views 34492 7880 Homepage rendered successfully
+INFO 2025-12-03 13:29:39,183 views 34492 32356 Profiles index accessed from IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+INFO 2025-12-03 13:29:39,187 views 34492 32356 Profiles index page rendered successfully with 4 profiles
+INFO 2025-12-03 13:29:40,358 views 34492 32356 Lettings index accessed from IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+INFO 2025-12-03 13:29:40,361 views 34492 32356 Lettings index page rendered successfully with 6 lettings
+INFO 2025-12-03 13:29:41,603 views 34492 32356 Profiles index accessed from IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+INFO 2025-12-03 13:29:41,607 views 34492 32356 Profiles index page rendered successfully with 4 profiles
+WARNING 2025-12-03 13:29:44,688 views 34492 32356 404 Error: URL='/profiles/zaz', IP=127.0.0.1, Referer='unknown', Exception='{'tried': [[<URLPattern '' [name='index']>], [<URLResolver <module 'lettings.urls' from 'C:\\Users\\xavie\\Documents\\document privée\\OC_Project_13\\lettings\\urls.py'> (lettings:lettings) 'lettings/'>], [<URLResolver <module 'profiles.urls' from 'C:\\Users\\xavie\\Documents\\document privée\\OC_Project_13\\profiles\\urls.py'> (profiles:profiles) 'profiles/'>, <URLPattern '' [name='index']>], [<URLResolver <module 'profiles.urls' from 'C:\\Users\\xavie\\Documents\\document privée\\OC_Project_13\\profiles\\urls.py'> (profiles:profiles) 'profiles/'>, <URLPattern '<str:username>/' [name='profile']>], [<URLResolver <URLPattern list> (admin:admin) 'admin/'>]], 'path': 'profiles/zaz'}'
+INFO 2025-12-03 13:29:44,755 views 34492 7880 Profile detail accessed: username='zaz', IP=127.0.0.1
+WARNING 2025-12-03 13:29:44,759 views 34492 7880 Profile not found: username='zaz', IP=127.0.0.1
+WARNING 2025-12-03 13:29:44,761 views 34492 7880 404 Error: URL='/profiles/zaz/', IP=127.0.0.1, Referer='unknown', Exception='No Profile matches the given query.'
+WARNING 2025-12-03 13:29:44,766 log 34492 7880 Not Found: /profiles/zaz/
+WARNING 2025-12-03 13:29:44,767 basehttp 34492 7880 "GET /profiles/zaz/ HTTP/1.1" 404 4056
