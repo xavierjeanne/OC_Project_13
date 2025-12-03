@@ -22,15 +22,17 @@ RUN pip install --no-cache-dir --upgrade pip && \
 # Copy project files
 COPY . .
 
-# Create necessary directories
+# Copy and set executable permissions for entrypoint
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+# Create necessary directories and set permissions
 RUN mkdir -p staticfiles && \
-    chown -R appuser:appuser /app
+    chown -R appuser:appuser /app && \
+    chown appuser:appuser /entrypoint.sh
 
 # Switch to non-root user
 USER appuser
-
-# Collect static files
-RUN python manage.py collectstatic --noinput
 
 # Expose port
 EXPOSE 8000
@@ -38,6 +40,9 @@ EXPOSE 8000
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000')" || exit 1
+
+# Set entrypoint
+ENTRYPOINT ["/entrypoint.sh"]
 
 # Run the application with Gunicorn for production
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "4", "--timeout", "60", "oc_lettings_site.wsgi:application"]
