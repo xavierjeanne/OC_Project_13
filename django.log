@@ -314,3 +314,13 @@ INFO 2025-12-03 16:16:32,499 views 34572 39232 Homepage accessed: IP=127.0.0.1, 
 INFO 2025-12-03 16:16:32,500 views 34572 39232 Homepage rendered successfully
 WARNING 2025-12-03 16:16:32,537 views 34572 39232 404 Error: URL='/nonexistent-page/', IP=127.0.0.1, Referer='unknown', Exception='{'tried': [[<URLPattern '' [name='index']>], [<URLResolver <module 'lettings.urls' from 'C:\\Users\\xavie\\Documents\\document privée\\OC_Project_13\\lettings\\urls.py'> (lettings:lettings) 'lettings/'>], [<URLResolver <module 'profiles.urls' from 'C:\\Users\\xavie\\Documents\\document privée\\OC_Project_13\\profiles\\urls.py'> (profiles:profiles) 'profiles/'>], [<URLResolver <URLPattern list> (admin:admin) 'admin/'>]], 'path': 'nonexistent-page/'}'
 WARNING 2025-12-03 16:16:32,556 log 34572 39232 Not Found: /nonexistent-page/
+INFO 2025-12-04 10:16:19,996 views 11668 33044 Homepage accessed: IP=127.0.0.1, Referer=direct
+INFO 2025-12-04 10:16:19,998 views 11668 33044 Homepage rendered successfully
+INFO 2025-12-04 10:16:22,307 views 11668 27260 Profiles index accessed from IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+INFO 2025-12-04 10:16:22,311 views 11668 27260 Profiles index page rendered successfully with 4 profiles
+INFO 2025-12-04 10:16:23,193 views 11668 27260 Lettings index accessed from IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+INFO 2025-12-04 10:16:23,195 views 11668 27260 Lettings index page rendered successfully with 6 lettings
+INFO 2025-12-04 11:35:28,168 views 11668 5668 Homepage accessed: IP=127.0.0.1, Referer=http://127.0.0.1:8000/lettings/
+INFO 2025-12-04 11:35:28,170 views 11668 5668 Homepage rendered successfully
+INFO 2025-12-04 11:35:30,758 views 11668 32908 Lettings index accessed from IP: 127.0.0.1, User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36
+INFO 2025-12-04 11:35:30,772 views 11668 32908 Lettings index page rendered successfully with 6 lettings

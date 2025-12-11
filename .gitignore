@@ -2,5 +2,24 @@
 *.pyc
 venv
 
-# Documentation non versionnée
+# Documentation non versionnée (ancienne)
 docs/
+
+# Sphinx build directory
+doc/build/
+
+# Environment variables
+.env
+
+# Coverage reports
+htmlcov/
+.coverage
+coverage.xml
+
+# IDE
+.vscode/
+.idea/
+
+# Database
+*.sqlite3
+db.sqlite3
